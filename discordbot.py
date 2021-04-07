@@ -1,39 +1,22 @@
-import discord
-import sys
+from discord.ext import commands
+import os
+import traceback
+
+bot = commands.Bot(command_prefix='/')
+token = os.environ['DISCORD_BOT_TOKEN']
 
 
-from func import  diceroll
+@bot.event
+async def on_command_error(ctx, error):
+    orig_error = getattr(error, "original", error)
+    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+    await ctx.send(error_msg)
 
-TOKEN = '任意のトークン'
 
-client = discord.Client()
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
 
-@client.event
-async def on_ready():
-    print('--------------')
-    print('ログインしました')
-    print(client.user.name)
-    print(client.user.id)
-    print('--------------')
-    channel = client.get_channel('チャンネルID')
-    await channel.send('楽しいTRPGを始めましょう！')
 
-@client.event
-async def on_message(message):
-    if message.author.bot:
-        return
-    if message.content.startswith("!dice"):
-      
-        say = message.content 
+bot.run(token)
 
-       
-        order = say.strip('!dice ')
-        cnt, mx = list(map(int, order.split('d'))) 
-        dice = diceroll(cnt, mx) 
-        await message.channel.send(dice[cnt])
-        del dice[cnt]
-
-      
-        await message.channel.send(dice)
-
-client.run(TOKEN)
