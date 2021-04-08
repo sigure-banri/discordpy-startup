@@ -18,15 +18,15 @@ async def ping(ctx):
     await ctx.send('pong')
     
 @bot.command()
-async def dice(ctx):
+async def dicee(ctx):
     await ctx.send('1')
     
 @bot.command()
-async def dice(ctx):
+async def dicee(ctx):
     await ctx.send('2')
     
     @bot.command()
-async def dice(ctx):
+async def diece(ctx):
     await ctx.send('3')
     
 @bot.command()
