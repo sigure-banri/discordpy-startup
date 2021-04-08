@@ -16,19 +16,7 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-    
-@bot.command()
-async def aabb(ctx):
-    await ctx.send('1')
-    
-@bot.command()
-async def aabb(ctx):
-    await ctx.send('2')
-    
-    @bot.command()
-async def diece(ctx):
-    await ctx.send('3')
-    
+
 @bot.command()
 async def pong(ctx):
     await ctx.send('ping')
