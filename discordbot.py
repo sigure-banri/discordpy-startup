@@ -30,15 +30,15 @@ guraindo2 =  '5000万円', '１億円', '２億円', '３億円'
 @bot.command(name="貧乏神チャンス", pass_context=True)
 async def kyouun(ctx):
     ran2 = random.choice(guraindo2)
-    # await ctx.send("{}へ：貧乏神ポイントは".format(ctx.message.author.name))
-    await ctx.send(f"{ctx.message.author.name}へ：貧乏神ポイントは\n{ran2}")
+    # await ctx.send("{}へ：貧乏神チャンスで".format(ctx.message.author.name))
+    await ctx.send(f"{ctx.message.author.name}へ：貧乏神チャンスで\n{ran2}")
     
 guraindo3 =  '1000万円', '５０００万円', '１億円', '２億円'
-@bot.command(name="ラッキーチャンスA", pass_context=True)
+@bot.command(name="ラッキーチャンス", pass_context=True)
 async def kyouun(ctx):
     ran3 = random.choice(guraindo3)
-    # await ctx.send("{}へ：おそろポイントは。".format(ctx.message.author.name))
-    await ctx.send(f"{ctx.message.author.name}へ：おそろポイントは\n{ran3}")
+    # await ctx.send("{}へ：ラッキーチャンスで".format(ctx.message.author.name))
+    await ctx.send(f"{ctx.message.author.name}へ：ラッキーチャンスで\n{ran3}")
     
 
 @bot.command()
