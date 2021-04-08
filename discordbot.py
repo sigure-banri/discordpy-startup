@@ -29,9 +29,9 @@ async def kyouun(ctx):
 guraindo2 =  '半凶', '半中凶', '半大凶', '不明', '超絶大吉'
 @bot.command(name="運勢a", pass_context=True)
 async def kyouun(ctx):
-    ran1 = random.choice(guraindo2)
+    ran2 = random.choice(guraindo2)
     # await ctx.send("{}へ：今日の運勢だa。".format(ctx.message.author.name))
-    await ctx.send(f"{ctx.message.author.name}へ：今日の運勢だa。\n{ran1}")
+    await ctx.send(f"{ctx.message.author.name}へ：今日の運勢だa。\n{ran2}")
     
 
 @bot.command()
