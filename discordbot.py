@@ -2,12 +2,21 @@ from discord.ext import commands
 import os
 import traceback
 import random
+import discord
 
-
+client = discord.Client()
 
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+
+
+@client.event
+async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
 
 
 @bot.event
